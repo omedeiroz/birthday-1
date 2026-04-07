@@ -36,7 +36,7 @@ const RSVPSection = () => {
     if (formData.nome.trim()) {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:5000/api/convidados', {
+        const response = await fetch('https://backend-1-iwio.onrender.com/api/convidados', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
