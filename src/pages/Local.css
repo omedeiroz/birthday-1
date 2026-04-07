@@ -1,0 +1,409 @@
+.local-container {
+  width: 100%;
+}
+
+.local-container h1 {
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 36px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.intro-text {
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 30px;
+  background: rgba(255, 215, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #ffd700;
+}
+
+.content-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.local-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h2 {
+  color: #1a472a;
+  border-bottom: 3px solid #ffd700;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.info-card h3 {
+  color: #1a472a;
+  margin: 0 0 12px 0;
+  font-size: 18px;
+}
+
+.endereco-info {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #ffd700;
+  margin-bottom: 20px;
+}
+
+.endereco {
+  color: #1a472a;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0 5px;
+}
+
+.cep {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.valor {
+  color: #1a472a;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.btn-mapa {
+  background: #1a472a;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-mapa:hover {
+  background: #ffd700;
+  color: #1a472a;
+}
+
+.mapa-container {
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lateral-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.transportes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transporte-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border-left: 3px solid #ffd700;
+  transition: all 0.3s ease;
+}
+
+.transporte-item:hover {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transporte-emoji {
+  font-size: 28px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.transporte-info {
+  flex: 1;
+}
+
+.transporte-tipo {
+  color: #1a472a;
+  font-weight: 600;
+  margin: 0 0 4px;
+  font-size: 14px;
+}
+
+.transporte-detalhes {
+  color: #666;
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.informacoes {
+  background: linear-gradient(135deg, #1a472a 0%, #0d2818 100%);
+  color: #fff;
+}
+
+.informacoes h3 {
+  color: #ffd700;
+  border-bottom: 2px solid #ffd700;
+  padding-bottom: 12px;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #ddd;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+
+.bullet {
+  color: #ffd700;
+  font-weight: bold;
+  min-width: 24px;
+  text-align: center;
+}
+
+.guia-ida {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.guia-ida h2 {
+  color: #1a472a;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
+.passos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.passo-card {
+  background: linear-gradient(135deg, #1a472a 0%, #0d2818 100%);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  border: 2px solid #ffd700;
+  transition: all 0.3s ease;
+}
+
+.passo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+}
+
+.passo-numero {
+  font-size: 32px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.passo-card h4 {
+  color: #ffd700;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.passo-card p {
+  color: #ddd;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.duvidas {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.duvidas h2 {
+  color: #1a472a;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.faq-item {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #ffd700;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+  background: #fff;
+}
+
+.faq-item h4 {
+  color: #1a472a;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.faq-item p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-footer {
+  background: linear-gradient(135deg, #1a472a 0%, #0d2818 100%);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid #ffd700;
+  color: #fff;
+}
+
+.contact-footer h3 {
+  color: #ffd700;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.contact-footer p {
+  color: #ddd;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  background: #ffd700;
+  color: #1a472a;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #ffed4e;
+  transform: scale(1.05);
+}
+
+.contact-icon {
+  font-size: 18px;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .content-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .local-container h1 {
+    font-size: 28px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guia-ida,
+  .duvidas,
+  .contact-footer {
+    padding: 20px;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+  }
+
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

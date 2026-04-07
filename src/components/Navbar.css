@@ -1,0 +1,149 @@
+.navbar {
+  background: linear-gradient(90deg, #1a472a 0%, #0d2818 100%);
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid #ffd700;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffd700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.brand-icon {
+  font-size: 32px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.brand-text {
+  display: none;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background: rgba(255, 215, 0, 0.1);
+  color: #ffd700;
+}
+
+.nav-link.active {
+  background: #ffd700;
+  color: #1a472a;
+}
+
+.nav-icon {
+  font-size: 18px;
+}
+
+.nav-text {
+  white-space: nowrap;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: #ffd700;
+  border: none;
+  color: #1a472a;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .brand-text {
+    display: inline;
+    font-size: 18px;
+  }
+
+  .navbar-container {
+    padding: 10px 15px;
+  }
+
+  .nav-text {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #1a472a;
+    border-bottom: 3px solid #ffd700;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    gap: 0;
+  }
+
+  .navbar-menu.active {
+    max-height: 300px;
+  }
+
+  .navbar-menu li {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    border-radius: 0;
+    padding: 15px 20px;
+    justify-content: flex-start;
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 215, 0, 0.15);
+  }
+}

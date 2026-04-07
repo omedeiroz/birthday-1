@@ -1,0 +1,385 @@
+.confirmacao-container {
+  width: 100%;
+}
+
+.confirmacao-container h1 {
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 36px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.intro-text {
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 30px;
+  background: rgba(255, 215, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #ffd700;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.form-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.confirmation-form h2 {
+  color: #1a472a;
+  border-bottom: 2px solid #ffd700;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #1a472a;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.acompanhantes-section {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.acompanhantes-section h2 {
+  color: #1a472a;
+  border-bottom: 2px solid #ffd700;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.section-hint {
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.acompanhante-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px dashed #ffd700;
+}
+
+.acompanhantes-list {
+  margin-top: 20px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.acompanhantes-list h3 {
+  color: #1a472a;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.acompanhantes-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.acompanhante-item {
+  background: #f0f0f0;
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 3px solid #ffd700;
+}
+
+.acompanhante-item span:nth-child(1) {
+  font-weight: 600;
+  color: #1a472a;
+}
+
+.acompanhante-item .badge {
+  background: #1a472a;
+  color: #ffd700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btn-remove {
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-remove:hover {
+  background: #ff5252;
+  transform: scale(1.1);
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary {
+  background: #1a472a;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+}
+
+.btn-secondary:hover {
+  background: #ffd700;
+  color: #1a472a;
+}
+
+.btn-primary {
+  background: #ffd700;
+  color: #1a472a;
+  border: 2px solid #ffd700;
+}
+
+.btn-primary:hover {
+  background: #ffed4e;
+  transform: translateY(-2px);
+}
+
+.btn-submit {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.confirmados-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.confirmados-section h2 {
+  color: #1a472a;
+  border-bottom: 2px solid #ffd700;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.confirmados-count {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 15px;
+  background: #1a472a;
+  padding: 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  font-size: 16px;
+}
+
+.confirmados-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.confirmado-card {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #ffd700;
+  transition: all 0.3s ease;
+}
+
+.confirmado-card:hover {
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+  background: #fff;
+}
+
+.confirmado-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.confirmado-header h4 {
+  color: #1a472a;
+  font-size: 16px;
+  margin: 0;
+}
+
+.confirmation-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.confirmation-badge.sim {
+  background: #d4edda;
+  color: #155724;
+}
+
+.confirmation-badge.nao {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.confirmation-badge.talvez {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.info-item {
+  color: #666;
+  font-size: 13px;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-icon {
+  font-size: 16px;
+}
+
+.acompanhantes-info {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+}
+
+.info-label {
+  color: #1a472a;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.acompanhantes-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.acompanhantes-info li {
+  color: #666;
+  font-size: 13px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.acompanhantes-info li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #ffd700;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .confirmacao-container h1 {
+    font-size: 28px;
+  }
+
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .form-section,
+  .confirmados-section {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .confirmados-list {
+    max-height: none;
+  }
+}
