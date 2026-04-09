@@ -3,57 +3,39 @@ import { useEffect, useState } from 'react';
 const TARGET_DATE = new Date('2026-05-02T13:00:00');
 
 const CountdownSection = () => {
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft());
-
-  function getTimeLeft() {
-    const diff = TARGET_DATE.getTime() - Date.now();
-    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    return {
-      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((diff / (1000 * 60)) % 60),
-      seconds: Math.floor((diff / 1000) % 60),
-    };
-  }
+  const [days, setDays] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
+    const updateDays = () => {
+      const diff = TARGET_DATE.getTime() - Date.now();
+      const daysLeft = Math.floor(diff / (1000 * 60 * 60 * 24));
+      setDays(Math.max(0, daysLeft));
+    };
+
+    updateDays();
+    const timer = setInterval(updateDays, 1000 * 60 * 60);
     return () => clearInterval(timer);
   }, []);
 
-  const blocks = [
-    { value: timeLeft.days, label: 'Dias' },
-    { value: timeLeft.hours, label: 'Horas' },
-    { value: timeLeft.minutes, label: 'Min' },
-    { value: timeLeft.seconds, label: 'Seg' },
-  ];
-
   return (
-    <section className="py-20 px-4 bg-gradient-field">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-white uppercase tracking-wider mb-2">
-          ⏱️ Apito Inicial Em
-        </h2>
-        <p className="font-body text-slate-300 mb-10">2 de Maio de 2026 • 13h</p>
-        <div className="grid gap-4 md:gap-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(80px, 1fr))' }}>
-          {blocks.map((b) => (
-            <div
-              key={b.label}
-              className="card p-6"
-              style={{ 
-                background: 'rgba(15, 23, 42, 0.3)',
-                backdropFilter: 'blur(4px)',
-                border: '1px solid hsla(45, 100%, 50%, 0.3)',
-              }}
-            >
-              <span className="font-heading text-5xl md:text-6xl font-bold block text-white">
-                {String(b.value).padStart(2, '0')}
-              </span>
-              <span className="font-body text-xs uppercase tracking-[0.2em] mt-2 block text-slate-400">
-                {b.label}
-              </span>
-            </div>
-          ))}
+    <section style={{ padding: '2rem 1rem', backgroundColor: 'rgba(15, 23, 42, 0.5)' }}>
+      <div style={{ maxWidth: '48rem', margin: '0 auto', textAlign: 'center' }}>
+        <div style={{ borderBottom: '1px solid rgba(251, 191, 36, 0.3)', paddingBottom: '1.5rem' }}>
+          <p style={{ fontSize: '0.875rem', color: 'rgb(148, 163, 184)', letterSpacing: '0.05em', margin: 0 }}>
+            FESTA
+          </p>
+          <p style={{ fontSize: '1.5rem', color: 'rgb(255, 255, 255)', fontWeight: '500', margin: '0.5rem 0 0' }}>
+            2 de Maio • 13h
+          </p>
+        </div>
+        
+        <div style={{ marginTop: '1.5rem' }}>
+          <p style={{ fontSize: '0.75rem', color: 'rgb(148, 163, 184)', letterSpacing: '0.1em', margin: 0, marginBottom: '0.5rem' }}>
+            DIAS RESTANTES
+          </p>
+          <p style={{ fontSize: '2.5rem', color: 'rgb(251, 191, 36)', fontWeight: 'bold', margin: 0 }}>
+            {days}
+          </p>
         </div>
       </div>
     </section>

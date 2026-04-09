@@ -136,40 +136,60 @@ function Landing() {
         </div>
       </section>
 
-      {/* COUNTDOWN SECTION */}
-      <section className="countdown-section">
-        <div className="countdown-content">
-          <h2>⏱️ APITO INICIAL EM</h2>
-          <p className="countdown-date">2 de Maio de 2026 • 13h</p>
-          <div className="countdown-timer">
-            <div className="countdown-item">
-              <span className="countdown-number">{countdown.dias}</span>
-              <span className="countdown-label">DIAS</span>
-            </div>
-            <div className="countdown-item">
-              <span className="countdown-number">{countdown.horas}</span>
-              <span className="countdown-label">HORAS</span>
-            </div>
-            <div className="countdown-item">
-              <span className="countdown-number">{countdown.minutos}</span>
-              <span className="countdown-label">MIN</span>
-            </div>
-            <div className="countdown-item">
-              <span className="countdown-number">{countdown.segundos}</span>
-              <span className="countdown-label">SEG</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CONFIRMAÇÃO SECTION */}
-      <section id="confirmacao" className="confirmacao-section">
-        <div className="confirmacao-wrapper">
-          <div className="confirmacao-form-container">
-            <h2>✅ Confirme Sua Presença</h2>
-            <form onSubmit={handleSubmit} className="confirmation-form">
-              <div className="form-group">
-                <label htmlFor="nome">Seu Nome *</label>
+      <section id="confirmacao" className="confirmacao-section" style={{
+        padding: '4rem 1rem',
+        background: 'linear-gradient(135deg, rgba(13, 40, 24, 0.5) 0%, rgba(25, 118, 210, 0.1) 100%)',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        <div className="confirmacao-wrapper" style={{
+          maxWidth: '70rem',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '3rem',
+          alignItems: 'start'
+        }}>
+          <div className="confirmacao-form-container" style={{
+            background: 'rgba(15, 23, 42, 0.6)',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(251, 191, 36, 0.2)',
+            borderRadius: '1rem',
+            padding: '2.5rem',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+          }}>
+            <h2 style={{
+              fontSize: '1.875rem',
+              fontWeight: 'bold',
+              color: 'rgb(255, 255, 255)',
+              marginBottom: '0.5rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem'
+            }}>
+              ✅ Confirme Sua Presença
+            </h2>
+            <p style={{
+              fontSize: '0.875rem',
+              color: 'rgb(148, 163, 184)',
+              marginBottom: '2rem'
+            }}>
+              Não deixe de nos avisar que você virá!
+            </p>
+
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <label htmlFor="nome" style={{
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  color: 'rgb(226, 232, 240)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}>
+                  Seu Nome *
+                </label>
                 <input
                   type="text"
                   id="nome"
@@ -178,46 +198,156 @@ function Landing() {
                   onChange={handleInputChange}
                   placeholder="Digite seu nome"
                   required
+                  style={{
+                    padding: '0.75rem 1rem',
+                    backgroundColor: 'rgba(30, 41, 59, 0.8)',
+                    border: '1px solid rgba(148, 163, 184, 0.2)',
+                    borderRadius: '0.5rem',
+                    color: 'rgb(255, 255, 255)',
+                    fontSize: '1rem',
+                    transition: 'all 0.3s ease',
+                    outline: 'none'
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = 'rgb(251, 191, 36)';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(251, 191, 36, 0.1)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = 'rgba(148, 163, 184, 0.2)';
+                    e.target.style.boxShadow = 'none';
+                  }}
                 />
               </div>
 
-              <div className="form-group">
-                <label htmlFor="confirmado">Confirmação🎉</label>
+              <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <label htmlFor="confirmado" style={{
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  color: 'rgb(226, 232, 240)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}>
+                  Vai ou Não Vai? 🎯
+                </label>
                 <select
                   id="confirmado"
                   name="confirmado"
                   value={formData.confirmado}
                   onChange={handleInputChange}
+                  style={{
+                    padding: '0.75rem 1rem',
+                    backgroundColor: 'rgba(30, 41, 59, 0.8)',
+                    border: '1px solid rgba(148, 163, 184, 0.2)',
+                    borderRadius: '0.5rem',
+                    color: 'rgb(255, 255, 255)',
+                    fontSize: '1rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    outline: 'none'
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = 'rgb(251, 191, 36)';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(251, 191, 36, 0.1)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = 'rgba(148, 163, 184, 0.2)';
+                    e.target.style.boxShadow = 'none';
+                  }}
                 >
-                  <option value="sim">✅ Sim, estarei lá!</option>
-                  <option value="nao">❌ Não vou poder ir</option>
-                  <option value="talvez">❓ Ainda não sei</option>
+                  <option value="sim" style={{ backgroundColor: 'rgb(15, 23, 42)', color: 'rgb(255, 255, 255)' }}>✅ Sim, estarei lá!</option>
+                  <option value="nao" style={{ backgroundColor: 'rgb(15, 23, 42)', color: 'rgb(255, 255, 255)' }}>❌ Não vou poder ir</option>
+                  <option value="talvez" style={{ backgroundColor: 'rgb(15, 23, 42)', color: 'rgb(255, 255, 255)' }}>❓ Ainda não sei</option>
                 </select>
               </div>
 
-              <div className="acompanhantes-form">
-                <label>Acompanhantes (Opcional) 👥</label>
-                <div className="acomp-input-group">
+              <div className="acompanhantes-form" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <label style={{
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  color: 'rgb(226, 232, 240)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}>
+                  Acompanhantes (Opcional) 👥
+                </label>
+                <div className="acomp-input-group" style={{ display: 'flex', gap: '0.5rem' }}>
                   <input
                     type="text"
                     value={acompanhante}
                     onChange={handleAcompanhanteChange}
                     placeholder="Nome do acompanhante"
+                    style={{
+                      flex: 1,
+                      padding: '0.75rem 1rem',
+                      backgroundColor: 'rgba(30, 41, 59, 0.8)',
+                      border: '1px solid rgba(148, 163, 184, 0.2)',
+                      borderRadius: '0.5rem',
+                      color: 'rgb(255, 255, 255)',
+                      fontSize: '0.875rem',
+                      outline: 'none',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = 'rgb(251, 191, 36)';
+                      e.target.style.boxShadow = '0 0 0 3px rgba(251, 191, 36, 0.1)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = 'rgba(148, 163, 184, 0.2)';
+                      e.target.style.boxShadow = 'none';
+                    }}
                   />
-                  <button type="button" onClick={adicionarAcompanhante} className="btn-add">
+                  <button 
+                    type="button" 
+                    onClick={adicionarAcompanhante} 
+                    style={{
+                      padding: '0.75rem 1.5rem',
+                      backgroundColor: 'rgba(251, 191, 36, 0.9)',
+                      color: 'rgb(15, 23, 42)',
+                      border: 'none',
+                      borderRadius: '0.5rem',
+                      fontWeight: '600',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      fontSize: '0.875rem'
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = 'rgb(251, 191, 36)'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(251, 191, 36, 0.9)'}
+                  >
                     + Adicionar
                   </button>
                 </div>
 
                 {formData.acompanhantes.length > 0 && (
-                  <div className="acompanhantes-list">
+                  <div className="acompanhantes-list" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.5rem' }}>
                     {formData.acompanhantes.map((acomp, index) => (
-                      <div key={index} className="acompanhante-tag">
-                        <span>{acomp}</span>
+                      <div 
+                        key={index} 
+                        className="acompanhante-tag"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.5rem',
+                          backgroundColor: 'rgba(251, 191, 36, 0.2)',
+                          border: '1px solid rgba(251, 191, 36, 0.5)',
+                          borderRadius: '2rem',
+                          padding: '0.5rem 1rem',
+                          fontSize: '0.875rem',
+                          color: 'rgb(251, 191, 36)'
+                        }}
+                      >
+                        <span>👤 {acomp}</span>
                         <button
                           type="button"
                           onClick={() => removerAcompanhante(index)}
-                          className="btn-remove-tag"
+                          style={{
+                            background: 'none',
+                            border: 'none',
+                            color: 'rgb(251, 191, 36)',
+                            cursor: 'pointer',
+                            fontSize: '1rem',
+                            padding: 0,
+                            marginLeft: '0.25rem'
+                          }}
                         >
                           ✕
                         </button>
@@ -227,29 +357,119 @@ function Landing() {
                 )}
               </div>
 
-              <button type="submit" className="btn-submit">
+              <button 
+                type="submit"
+                style={{
+                  padding: '1rem',
+                  backgroundColor: 'linear-gradient(135deg, rgb(251, 191, 36) 0%, rgb(245, 158, 11) 100%)',
+                  background: 'linear-gradient(135deg, rgb(251, 191, 36) 0%, rgb(245, 158, 11) 100%)',
+                  color: 'rgb(15, 23, 42)',
+                  border: 'none',
+                  borderRadius: '0.75rem',
+                  fontWeight: '700',
+                  fontSize: '1rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  marginTop: '0.5rem',
+                  boxShadow: '0 4px 15px rgba(251, 191, 36, 0.3)'
+                }}
+                onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
+                onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
+              >
                 🎯 Confirmar Presença
               </button>
             </form>
           </div>
 
-          <div className="confirmados-container">
-            <h2>Confirmados ({confirmados.length})</h2>
+          <div className="confirmados-container" style={{
+            background: 'rgba(15, 23, 42, 0.6)',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(251, 191, 36, 0.2)',
+            borderRadius: '1rem',
+            padding: '2.5rem',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+            maxHeight: '600px',
+            overflowY: 'auto'
+          }}>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: 'bold',
+              color: 'rgb(255, 255, 255)',
+              marginBottom: '1.5rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem'
+            }}>
+              ⚽ Confirmados
+              <span style={{
+                backgroundColor: 'rgba(251, 191, 36, 0.2)',
+                color: 'rgb(251, 191, 36)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '1rem',
+                fontSize: '0.875rem',
+                fontWeight: '600'
+              }}>
+                {confirmados.length}
+              </span>
+            </h3>
             {confirmados.length === 0 ? (
-              <div className="empty-confirmados">
-                <p>Nenhuma confirmação ainda...</p>
+              <div className="empty-confirmados" style={{
+                textAlign: 'center',
+                padding: '2rem 1rem',
+                color: 'rgb(148, 163, 184)'
+              }}>
+                <p style={{ fontSize: '0.875rem' }}>Aguardando confirmações... 👀</p>
               </div>
             ) : (
-              <div className="confirmados-grid">
+              <div className="confirmados-grid" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem'
+              }}>
                 {confirmados.map((req, index) => (
-                  <div key={index} className="confirmado-badge">
-                    <p className="confirmado-nome">{req.nome}</p>
-                    <span className={`status-badge ${req.confirmado}`}>
+                  <div 
+                    key={index} 
+                    className="confirmado-badge"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '1rem',
+                      backgroundColor: 'rgba(30, 41, 59, 0.5)',
+                      border: '1px solid rgba(148, 163, 184, 0.1)',
+                      borderRadius: '0.5rem',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(30, 41, 59, 0.8)'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(30, 41, 59, 0.5)'}
+                  >
+                    <div style={{ flex: 1 }}>
+                      <p className="confirmado-nome" style={{
+                        fontSize: '0.95rem',
+                        fontWeight: '600',
+                        color: 'rgb(255, 255, 255)',
+                        margin: 0,
+                        marginBottom: '0.25rem'
+                      }}>
+                        {req.nome}
+                      </p>
+                      {req.acompanhantes.length > 0 && (
+                        <p className="confirmado-acomp" style={{
+                          fontSize: '0.75rem',
+                          color: 'rgb(148, 163, 184)',
+                          margin: 0
+                        }}>
+                          +{req.acompanhantes.length} {req.acompanhantes.length === 1 ? 'acompanhante' : 'acompanhantes'}
+                        </p>
+                      )}
+                    </div>
+                    <span className={`status-badge ${req.confirmado}`} style={{
+                      fontSize: '1.5rem'
+                    }}>
                       {req.confirmado === 'sim' ? '✅' : req.confirmado === 'nao' ? '❌' : '❓'}
                     </span>
-                    {req.acompanhantes.length > 0 && (
-                      <p className="confirmado-acomp">+{req.acompanhantes.length}</p>
-                    )}
                   </div>
                 ))}
               </div>
@@ -290,7 +510,7 @@ function Landing() {
             <div className="info-icon">🍺</div>
             <div className="info-text">
               <h3>Bebidas Alcoólicas</h3>
-              <p>Quem desejar consumir bebida alcoólica, favor trazer a sua! 🍻</p>
+              <p>Quem desejar consumir bebida alcoólicaas, favor trazer a sua! 🍻</p>
             </div>
           </div>
         </div>
@@ -307,7 +527,7 @@ function Landing() {
               <span className="info-icon">📍</span>
               <div className="info-text">
                 <h4>ENDEREÇO</h4>
-                <p>Rua das Palmeiras, 123<br />Bairro Centro - São Paulo, SP</p>
+                <p>Rua Maurício Fagundes Rezende, 460<br />Recanto dos Lagos - Juiz de Fora, MG</p>
               </div>
             </div>
 
@@ -332,10 +552,10 @@ function Landing() {
             <iframe
               title="Localização da Festa"
               width="100%"
-              height="300"
-              style={{ border: 0, borderRadius: '8px' }}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.824046348382!2d-46.65560732346889!3d-23.550505871234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5985b5b5b5b5%3A0x5b5b5b5b5b5b5b5b!2sRua%20das%20Palmeiras!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-              allowFullScreen=""
+              height="450"
+              style={{ border: '0', borderRadius: '8px' }}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1853.4408870242933!2d-43.34136328160754!3d-21.707315341678903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x989d479ecd956b%3A0x8682bc9f7d31f088!2sR.%20Maurício%20Fagundes%20Rezende%2C%20460%20-%20Recanto%20dos%20Lagos%2C%20Juiz%20de%20Fora%20-%20MG%2C%2036048-734!5e0!3m2!1spt-BR!2sbr!4v1775743464340!5m2!1spt-BR!2sbr"
+              allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
