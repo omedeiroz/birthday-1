@@ -49,7 +49,34 @@ const RSVPSection = () => {
     // se clicar em enviar sem preencher, mostra validação
     setNomeTouched(true);
 
-    if (!podeEnviar) return;
+    const nome = formData.nome.trim();
+    if (nome.length < 2) return;
+
+    // IMPORTANTe: se o usuário digitou um acompanhante e NÃO clicou no +,
+    // a gente inclui automaticamente no envio.
+    const pendente = novoAcompanhante.trim();
+
+    // monta o array final localmente (não depende do setState async)
+    const acompanhantes = [
+      ...formData.acompanhantes,
+      ...(pendente ? [pendente] : []),
+    ]
+      .map((a) => String(a).trim())
+      .filter(Boolean);
+
+    // limpa UI (opcional) para não ficar pendente após enviar
+    if (pendente) setNovoAcompanhante('');
+
+    // evita duplicados (caso já exista na lista e também esteja pendente)
+    const acompanhantesUnicos = [];
+    const seen = new Set();
+    for (const a of acompanhantes) {
+      const key = a.toLowerCase();
+      if (!seen.has(key)) {
+        seen.add(key);
+        acompanhantesUnicos.push(a);
+      }
+    }
 
     setLoading(true);
     try {
@@ -57,17 +84,21 @@ const RSVPSection = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          nome: formData.nome.trim(),
+          nome,
           confirmado: true,
-          acompanhantes: formData.acompanhantes,
+          acompanhantes: acompanhantesUnicos,
         }),
       });
 
-      if (response.ok) setSubmitted(true);
-      else setSubmitted(true); // mantém UX simples (não travar o usuário)
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        const txt = await response.text().catch(() => '');
+        alert(`Erro ao salvar no servidor (${response.status}).\n${txt}`);
+      }
     } catch (error) {
-      console.log('Usando localStorage como fallback');
-      setSubmitted(true);
+      console.log('Falha na requisição:', error);
+      alert('Não consegui enviar para o servidor agora. Tente novamente.');
     } finally {
       setLoading(false);
     }
@@ -266,7 +297,7 @@ const RSVPSection = () => {
               </div>
 
               <p className="text-xs text-slate-400 mt-2">
-                Dica: você pode apertar <strong>Enter</strong> para adicionar.
+                Dica: você pode apertar <strong>Enter</strong> ou só digitar e enviar — eu adiciono automaticamente.
               </p>
             </div>
 

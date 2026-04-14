@@ -21,7 +21,7 @@ function Navbar({ currentPage, onNavigate }) {
       <div className="navbar-container">
         <div className="navbar-brand">
           <span className="brand-icon">⚽</span>
-          <span className="brand-text">Aniversário do Goleador</span>
+          <span className="brand-text">Aniversário do Arthur</span>
         </div>
         
         <button 
