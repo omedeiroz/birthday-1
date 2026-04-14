@@ -9,7 +9,7 @@ const presentes = [
     emoji: '👕',
     nome: 'Vestuário',
     // aqui eu coloco tudo junto em uma linha; se quiser em linhas separadas, me fala que eu faço com <br/>
-    tamanho: 'Camisa: G • Calça: 38 • Short: 36',
+    tamanho: 'Camisa: G • Calça: 38 • Short: 38',
     category: '',
   },
   {
