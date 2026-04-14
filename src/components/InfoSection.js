@@ -83,7 +83,7 @@ const InfoSection = () => {
                     }}
                   >
                     <p className="font-body text-slate-200 text-sm" style={{ marginBottom: '0.75rem' }}>
-                      <strong style={{ color: '#ffd700' }}>Pagamento até:</strong> 29 de abril de 2026
+                      <strong style={{ color: '#ffd700' }}>Pagamento até:</strong> 25 de abril de 2026
                     </p>
 
                     <div style={{ display: 'grid', gap: '0.6rem' }}>
