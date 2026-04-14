@@ -510,7 +510,7 @@ function Landing() {
             <div className="info-icon">🍺</div>
             <div className="info-text">
               <h3>Bebidas Alcoólicas</h3>
-              <p>Quem desejar consumir bebida alcoólicaas, favor trazer a sua! 🍻</p>
+              <p>Quem desejar consumir bebida alcoólica, favor trazer a sua! 🍻</p>
             </div>
           </div>
         </div>
