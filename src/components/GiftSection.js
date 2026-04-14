@@ -3,37 +3,32 @@ const presentes = [
     emoji: '👟',
     nome: 'Chuteira',
     tamanho: 'Tamanho 40',
-    category: 'Sport',
+    category: '',
   },
   {
     emoji: '👕',
-    nome: 'Camisa',
-    tamanho: 'Tamanho G',
-    category: 'Vestuário',
-  },
-  {
-    emoji: '👖',
-    nome: 'Calça',
-    tamanho: 'Tamanho 38',
-    category: 'Vestuário',
-  },
-  {
-    emoji: '🩳',
-    nome: 'Short',
-    tamanho: 'Tamanho 36',
-    category: 'Vestuário',
+    nome: 'Vestuário',
+    // aqui eu coloco tudo junto em uma linha; se quiser em linhas separadas, me fala que eu faço com <br/>
+    tamanho: 'Camisa: G • Calça: 38 • Short: 36',
+    category: '',
   },
   {
     emoji: '🔴',
     nome: 'Itens Flamengo',
-    tamanho: 'Qualquer tamanho',
-    category: 'Flamengo',
+    tamanho: 'Qualquer item',
+    category: '',
   },
   {
     emoji: '🧴',
     nome: 'Perfume',
     tamanho: 'Seu gosto',
-    category: 'Higiene',
+    category: '',
+  },
+  {
+    emoji: '💸',
+    nome: 'Qualquer quantia em Pix',
+    tamanho: 'Pix: (32) 98853-5981',
+    category: '',
   },
 ];
 

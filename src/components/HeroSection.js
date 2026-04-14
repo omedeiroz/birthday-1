@@ -9,15 +9,14 @@ const HeroSection = () => {
         <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase mb-4 drop-shadow-lg" style={{ letterSpacing: '-0.02em' }}>
           Meu Aniversário
         </h1>
-        <p className="font-heading text-2xl md:text-3xl text-gradient-gold uppercase font-bold mb-8">
-          ⚽ Bora pra festa! ⚽
-        </p>
         <a
           href="#confirmacao"
           className="btn-primary inline-block"
-        >
-          Confirmar Presença
+        >⚽ Bora pra festa! ⚽
+        
         </a>
+        
+         
       </div>
     </section>
   );
